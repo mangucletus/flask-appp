@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Flask on AWS</title>
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #232f3e 0%, #1a2536 100%);
+        color: #f5f6f8;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card {
+        background: #ffffff;
+        color: #1a1a1a;
+        padding: 2.5rem 3rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        max-width: 520px;
+        width: 90%;
+      }
+      h1 {
+        margin: 0 0 1rem 0;
+        color: #232f3e;
+        border-bottom: 3px solid #ff9900;
+        padding-bottom: 0.6rem;
+      }
+      .row {
+        margin: 0.6rem 0;
+      }
+      .label {
+        color: #5a6877;
+        font-size: 0.9rem;
+      }
+      .value {
+        font-weight: 600;
+        font-family: monospace;
+      }
+      .badge {
+        display: inline-block;
+        background: #ff9900;
+        color: #fff;
+        padding: 2px 10px;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+      a {
+        color: #ff9900;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Flask on AWS <span class="badge">{{ version }}</span></h1>
+      <p>{{ message }}</p>
+      <div class="row">
+        <span class="label">Served by:</span>
+        <span class="value">{{ host }}</span>
+      </div>
+      <div class="row">
+        <span class="label">Try also:</span>
+        <a href="/health">/health</a> &middot;
+        <code>POST /echo</code>
+      </div>
+    </div>
+  </body>
+</html>
