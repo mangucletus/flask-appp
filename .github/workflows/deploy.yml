@@ -45,7 +45,8 @@ jobs:
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          # TEMP for OIDC debugging — revert to ${{ secrets.AWS_ROLE_ARN }} after verifying
+          role-to-assume: arn:aws:iam::003100375237:role/GitHubActionsDeployRole
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Package application
