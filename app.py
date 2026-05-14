@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
 
-APP_VERSION = "v1"
+APP_VERSION = "v2"
 
 
 @app.route("/")
