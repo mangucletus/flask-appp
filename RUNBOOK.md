@@ -83,7 +83,7 @@ Expect `HTTP/1.1 200 OK` from `Server: gunicorn`.
 | ALB **503 Service Unavailable** | No healthy targets | Check Target Group → Targets tab for failure reason |
 | ALB **502 Bad Gateway** | TG port mismatch (set to 80, app on 8000) | Recreate TG on port **8000**; update listener + ASG |
 | `git clone` fails in user-data | `<your-username>` placeholder not replaced | Edit `templates/user-data.sh` with real repo URL |
-| Pip install fails | Script references `requirements.txt`; repo file is `requirement.txt` (singular) | Match the actual filename |
+| Pip install fails with "No such file" | Filename mismatch between script and repo | Standard is `requirements.txt` (plural) — make sure both match |
 
 ---
 

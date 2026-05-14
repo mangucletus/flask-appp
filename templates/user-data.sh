@@ -19,7 +19,7 @@ chown -R ubuntu:ubuntu flask-app
 # Create an isolated virtualenv and install Python dependencies into it.
 cd flask-app
 [ -d venv ] || python3 -m venv venv
-./venv/bin/pip install -r requirement.txt
+./venv/bin/pip install -r requirements.txt
 
 # Write a systemd unit so gunicorn starts on boot and restarts on crash.
 cat > /etc/systemd/system/flaskapp.service <<'EOF'

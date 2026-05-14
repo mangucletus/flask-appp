@@ -11,7 +11,7 @@ Tiny Flask demo for AWS deployment exercises (EC2, ALB + ASG, CodeDeploy).
 ```bash
 cp .env.example .env          # fill in your values
 python3 -m venv venv
-./venv/bin/pip install -r requirement.txt
+./venv/bin/pip install -r requirements.txt
 ./venv/bin/python app.py
 # open http://localhost:8000
 ```
