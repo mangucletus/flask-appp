@@ -40,3 +40,16 @@ EOF
 # Load the new unit and start it now (also enables it for future boots).
 systemctl daemon-reload
 systemctl enable --now flaskapp
+
+
+# Install the CodeDeploy agent so this instance can receive deployments.
+apt install -y ruby-full wget
+cd /tmp
+# Region-specific installer — change the bucket region if your deployments live elsewhere.
+wget https://aws-codedeploy-eu-west-1.s3.eu-west-1.amazonaws.com/latest/install
+chmod +x ./install
+./install auto > /tmp/codedeploy-install.log 2>&1
+
+# Enable on boot + start now so the agent picks up future deployments.
+systemctl enable codedeploy-agent
+systemctl start codedeploy-agent
