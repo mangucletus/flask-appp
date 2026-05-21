@@ -13,7 +13,7 @@ apt install -y python3 python3-venv python3-pip git
 
 # Clone the app into the ubuntu user's home (skip if already present, so re-runs are safe).
 cd /home/ubuntu
-[ -d flask-app ] || git clone https://github.com/mangucletus/flask-app.git
+[ -d flask-app ] || git clone https://github.com/mangucletus/flask-appp.git flask-app
 chown -R ubuntu:ubuntu flask-app
 
 # Create an isolated virtualenv and install Python dependencies into it.
